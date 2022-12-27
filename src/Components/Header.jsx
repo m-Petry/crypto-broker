@@ -4,10 +4,13 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { CryptoState } from "../CryptoContext";
 
 const Header = () => {
   // Creates the route for homepage
   const navigate = useNavigate();
+
+  const { currency, setCurrency } = CryptoState;
 
   const darkTheme = createTheme({
     palette: {
@@ -40,12 +43,13 @@ const Header = () => {
               style={{
                 width: 100,
                 height: 40,
-                marginLeft: 15,
+                marginRight: 15,
                 cursor: "pointer",
                 color: "white",
                 border: "1px solid white"
               }}
-              value={"USD"}
+              value={currency}
+              onChange={(e) => setCurrency(e.target.value)}
             >
               <MenuItem value={"USD"}>USD</MenuItem>
               <MenuItem value={"BRL"}>BRL</MenuItem>
