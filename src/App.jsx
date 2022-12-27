@@ -1,9 +1,17 @@
+import { BrowserRouter, Route } from "react-router-dom";
 import "./App.css";
+import Header from "./Components/Header";
+import Homepage from "./Pages/Homepage";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return <div className="App"></div>;
+  return (
+    <BrowserRouter>
+      <div>
+        <Header />
+        <Route path="/" component={Homepage} />
+      </div>
+    </BrowserRouter>
+  );
 }
 
 export default App;
