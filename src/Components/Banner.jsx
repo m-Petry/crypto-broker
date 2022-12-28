@@ -1,3 +1,4 @@
+import { Typography } from "@mui/material";
 import React from "react";
 
 const Banner = () => {
@@ -9,9 +10,36 @@ const Banner = () => {
         display: "flex",
         flexDirection: "column",
         paddingTop: 25,
-        justifyContent: "space-around"
+        justifyContent: "center"
       }}
-    ></div>
+    >
+      <Typography
+        variant="h2"
+        style={{
+          fontWeight: "bold",
+          marginBottom: 15,
+          fontFamily: "Montserrat",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center"
+        }}
+      >
+        Crypto Broker
+      </Typography>
+      <Typography
+        variant="subtitle2"
+        style={{
+          color: "darkgrey",
+          textTransform: "capitalize",
+          fontFamily: "Montserrat",
+          display: "flex",
+          alignItems: "top",
+          justifyContent: "center"
+        }}
+      >
+        Get all the info regarding your favorite Crypto Coin
+      </Typography>
+    </div>
   );
 };
 
