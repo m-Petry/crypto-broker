@@ -1,7 +1,22 @@
 import { Box } from "@mui/system";
-import React from "react";
+import axios from "axios";
+import { useState, useEffect } from "react";
+import { TrendingCoins } from "../Config/Api";
 
 const Carousel = () => {
+  const [trending, setTrending] = useState([]);
+  const { currency } = CryptoState();
+
+  const fetchTrendingCoins = async () => {
+    const { data } = await axios.get(TrendingCoins(currency));
+
+    setTrending(data);
+  };
+
+  useEffect(() => {
+    fetchTrendingCoins();
+  }, []);
+
   return (
     <Box
       sx={{

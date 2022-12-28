@@ -1,7 +1,6 @@
 import { AppBar, MenuItem, Select, Toolbar, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { CryptoState } from "../CryptoContext";
