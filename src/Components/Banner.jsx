@@ -2,6 +2,7 @@ import { Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import React from "react";
 import Carousel from "./Carousel";
+import { CryptoContext } from "../CryptoContext";
 
 const Banner = () => {
   return (
@@ -42,7 +43,9 @@ const Banner = () => {
         >
           Get all the info regarding your favorite Crypto Coin
         </Typography>
-        <Carousel />
+        <CryptoContext>
+          <Carousel />
+        </CryptoContext>
       </Container>
     </div>
   );

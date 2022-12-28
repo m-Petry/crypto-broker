@@ -2,6 +2,7 @@ import { Box } from "@mui/system";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { TrendingCoins } from "../Config/Api";
+import { CryptoState } from "../CryptoContext";
 
 const Carousel = () => {
   const [trending, setTrending] = useState([]);
@@ -13,9 +14,11 @@ const Carousel = () => {
     setTrending(data);
   };
 
+  console.log(trending);
+
   useEffect(() => {
     fetchTrendingCoins();
-  }, []);
+  }, [currency]);
 
   return (
     <Box
